@@ -1,0 +1,2 @@
+[install.scopes]
+neodyland = { token = "$GH_NPM_TOKEN", url = "https://npm.pkg.github.com/" }
