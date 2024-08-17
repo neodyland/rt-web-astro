@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "module": "NodeNext",
-      "jsx": "react-jsx"
+        "module": "NodeNext",
+        "jsx": "react-jsx"
     }
-  }
+}

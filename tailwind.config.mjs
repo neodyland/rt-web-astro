@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-		'node_modules/@neodyland/ui/**/*.{js,ts,jsx,tsx}',
-	],
-	theme: {
-		extend: {
-			/*
+    content: [
+        "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+        "node_modules/@neodyland/ui/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {
+            /*
 			 Theme のカスタマイズ
 			  以下のカラーを変更できる
 	  
@@ -27,26 +28,26 @@ export default {
 	  
 			  primary, secondary, tertiary は、各component の colorScheme で指定できる
 			*/
-			primary: '#6200ee',
-			'on-primary': '#ffffff',
-			secondary: '#03dac4',
-			'on-secondary': '#000000',
-			tertiary: '#3cf6e7ff',
-			'on-tertiary': '#000000',
-			background: '#F2F9FF',
-			'on-background': '#0A1014',
-			surface: '#ffffff',
-			'on-surface': '#000000',
-			outline: 'rgba(0, 0, 0, 0.12)',
-			footer: {
-			  background: '#0A1014',
-			  text: '#F2F9FF',
-			  border: '#1f2937',
-			},
-			fontFamily: {
-				sans: ['Noto Sans JP', 'sans-serif'],
-			  },
-		  },
-	},
-	plugins: [require("@neodyland/ui/plugin")],
-}
+            primary: "#6200ee",
+            "on-primary": "#ffffff",
+            secondary: "#03dac4",
+            "on-secondary": "#000000",
+            tertiary: "#3cf6e7ff",
+            "on-tertiary": "#000000",
+            background: "#F2F9FF",
+            "on-background": "#0A1014",
+            surface: "#ffffff",
+            "on-surface": "#000000",
+            outline: "rgba(0, 0, 0, 0.12)",
+            footer: {
+                background: "#0A1014",
+                text: "#F2F9FF",
+                border: "#1f2937",
+            },
+            fontFamily: {
+                sans: ["Noto Sans JP", "sans-serif"],
+            },
+        },
+    },
+    plugins: [require("@neodyland/ui/plugin")],
+};
