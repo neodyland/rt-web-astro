@@ -10,6 +10,7 @@ export default defineConfig({
         react(),
         starlight({
             title: "RT Documentation",
+            favicon: "favicon.png",
         }),
     ],
 });
