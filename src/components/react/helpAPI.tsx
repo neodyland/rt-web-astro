@@ -23,7 +23,7 @@ const APIResponseComponent = () => {
         setCommand(command_name);
 
         if (!category && !command_name) {
-            fetch("https://rt-help.maamokun.workers.dev/api/help/get")
+            fetch("/api/help/get")
                 .then((response) => response.json())
                 .then((data) => {
                     setResponse(data);
@@ -32,7 +32,7 @@ const APIResponseComponent = () => {
 
         if (category && !command_name) {
             fetch(
-                `https://rt-help.maamokun.workers.dev/api/help/get/${category}`,
+                `/api/help/get/${category}`,
             )
                 .then((response) => response.json())
                 .then((data) => {
@@ -42,7 +42,7 @@ const APIResponseComponent = () => {
 
         if (command_name) {
             fetch(
-                `https://rt-help.maamokun.workers.dev/api/help/get/${category}/${command_name}`,
+                `/api/help/get/${category}/${command_name}`,
             )
                 .then((response) => response.json())
                 .then((data) => {
