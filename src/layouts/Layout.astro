@@ -5,7 +5,8 @@ interface Props {
 
 const { title } = Astro.props;
 
-import { Header, Footer } from "@neodyland/ui";
+import { Header } from "../components/nUI/Header";
+import { Footer } from "../components/nUI/Footer";
 
 import "@fontsource/noto-sans-jp";
 
@@ -151,7 +152,7 @@ const buttons = [
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />

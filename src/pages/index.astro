@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import { Button, Card, Flex, Heading, Text, Center } from "@neodyland/ui";
 import { FaTools, FaShieldAlt, FaRegSmileWink } from "react-icons/fa";
 import { FaWandMagicSparkles, FaMusic } from "react-icons/fa6";
 import { HiMiniSpeakerWave } from "react-icons/hi2";
@@ -29,114 +28,110 @@ const Line1 = [
 				>
 					<span class="absolute inset-0" aria-hidden="true" />
 					詳細 <span aria-hidden="true">→</span>
-			</a>
+				</a>
 			</div>
-			<Heading size="8xl" className="relative mt-24 tracking-wide">
-				<Center>
+			<h1 class="text-8xl font-bold relative mt-24 tracking-wide">
+				<div class="flex items-center justify-center">
 					<Image src={RTIcon} alt="/joinと送信して" />
-				</Center>
-			</Heading>
-			<Flex className="flex-col lg:flex-row" space={0}>
+				</div>
+			</h1>
+			<div class="flex flex-col lg:flex-row">
 				<div class="mt-20 lg:mt-24 lg:w-1/2 lg:pl-16">
 					<TypewriterEffectSmooth words={Line1} client:load/>
-					<Text
-						className="tracking-wider text-night/50"
-						size={"lg"}
-					>
+					<p class="tracking-wider text-night/50 text-lg">
 						便利な機能たくさん備えた高性能bot
-					</Text>
-					<Flex className="mt-6">
-						<Button size="lg" >
+					</p>
+					<div class="flex mt-6">
+						<button class="text-lg px-8 py-3 rounded-md bg-primary text-white hover:bg-primary/90">
 							<a href="/docs/user_guide/">導入する</a>
-						</Button>
-					</Flex>
+						</button>
+					</div>
 				</div>
-			</Flex>
+			</div>
 		</div>
 		<div class="mt-20 lg:mt-32">
-			<Flex className="w-full flex-col lg:flex-row">
-				<Flex className="lg:w-1/2 mx-20" direction="col">
-					<Flex direction="row">
+			<div class="flex w-full flex-col lg:flex-row">
+				<div class="flex flex-col lg:w-1/2 mx-20">
+					<div class="flex flex-row">
 						<FaTools fontSize={30} className="ml-5 lg:ml-10" />
-						<Text>様々な便利機能を一つに！</Text>
-					</Flex>
-					<Text>
+						<p>様々な便利機能を一つに！</p>
+					</div>
+					<p>
 						役職パネル・投票機能・ようこそメッセージ・レベリング等の機能が一つのbotにすべて備えられてます！
-					</Text>
-				</Flex>
-				<Flex className="lg:w-1/2 mx-20" direction="col">
-					<Flex direction="row">
+					</p>
+				</div>
+				<div class="flex flex-col lg:w-1/2 mx-20">
+					<div class="flex flex-row">
 						<FaWandMagicSparkles
 							fontSize={30}
 							className="ml-5 lg:ml-10"
 						/>
-						<Text>サーバーを快適に！</Text>
-					</Flex>
-					<Text>
+						<p>サーバーを快適に！</p>
+					</div>
+					<p>
 						翻訳チャンネルや一斉メッセージ削除等のサーバーを快適にしてくれる機能も沢山！
-					</Text>
-				</Flex>
-			</Flex>
-			<Flex className="w-full flex-col lg:flex-row">
-				<Flex className="lg:w-1/2 mx-20 mt-20" direction="col">
-					<Flex direction="row">
+					</p>
+				</div>
+			</div>
+			<div class="flex w-full flex-col lg:flex-row">
+				<div class="flex flex-col lg:w-1/2 mx-20 mt-20">
+					<div class="flex flex-row">
 						<FaShieldAlt
 							fontSize={30}
 							className="ml-5 lg:ml-10"
 						/>
-						<Text>安全なサーバーを！</Text>
-					</Flex>
-					<Text>
+						<p>安全なサーバーを！</p>
+					</div>
+					<p>
 						スパムbot対策のための認証機能や、絵文字・スタンプ・URLをブロックする機能であなたのサーバーを荒らしから守ろう！
-					</Text>
-				</Flex>
-				<Flex className="lg:w-1/2 mx-20 mt-20" direction="col">
-					<Flex direction="row">
+					</p>
+				</div>
+				<div class="flex flex-col lg:w-1/2 mx-20 mt-20">
+					<div class="flex flex-row">
 						<FaMusic fontSize={30} className="ml-5 lg:ml-10" />
-						<Text>音楽再生機能</Text>
-					</Flex>
-					<Text>
+						<p>音楽再生機能</p>
+					</div>
+					<p>
 						SoundCloudやニコニコ動画からの音楽をVCで再生できます！好きな音楽をプレイリストに全てまとめて使うと更に便利！
-					</Text>
-				</Flex>
-			</Flex>
-			<Flex className="w-full flex-col lg:flex-row">
-				<Flex className="lg:w-1/2 mx-20 mt-20" direction="col">
-					<Flex direction="row">
+					</p>
+				</div>
+			</div>
+			<div class="flex w-full flex-col lg:flex-row">
+				<div class="flex flex-col lg:w-1/2 mx-20 mt-20">
+					<div class="flex flex-row">
 						<HiMiniSpeakerWave
 							fontSize={30}
 							className="ml-5 lg:ml-10"
 						/>
-						<Text>読み上げ機能</Text>
-					</Flex>
-					<Text>
+						<p>読み上げ機能</p>
+					</div>
+					<p>
 						様々なボイスでVCにチャンネルに送られたメッセージを読み上げることができます！
 						<br />
 						様々な効果音も再生してVCを盛り上げよう！
-					</Text>
-				</Flex>
-				<Flex className="lg:w-1/2 mx-20 mt-20" direction="col">
-					<Flex direction="row">
+					</p>
+				</div>
+				<div class="flex flex-col lg:w-1/2 mx-20 mt-20">
+					<div class="flex flex-row">
 						<FaRegSmileWink
 							fontSize={30}
 							className="ml-5 lg:ml-10"
 						/>
-						<Text>その他にも！</Text>
-					</Flex>
-					<Text>
+						<p>その他にも！</p>
+					</div>
+					<p>
 						Minesweeperや天気予報機能等の、他にも色んな面白い機能が備わっています！
-					</Text>
-				</Flex>
-			</Flex>
+					</p>
+				</div>
+			</div>
 		</div>
-		<Card className="mx-auto mt-48 py-10 text-center md:w-full">
-			<Heading size="2xl" className="mb-4">
+		<div class="mx-auto mt-48 py-10 text-center md:w-full bg-white rounded-lg shadow">
+			<h2 class="text-2xl font-bold mb-4">
 				さあ、あなたのサーバーにもRTを導入しよう！
-			</Heading>
-			<Button size="lg" className="mx-auto">
+			</h2>
+			<button class="text-lg px-8 py-3 rounded-md bg-primary text-white hover:bg-primary/90 mx-auto">
 				<a href="/docs/user_guide/">導入</a>
-			</Button>
-		</Card>
-
+			</button>
+		</div>
 	</main>
 </Layout>

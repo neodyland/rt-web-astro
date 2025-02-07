@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Card, Heading, Flex, Center } from "@neodyland/ui";
 import { Button } from "./shadcn/button";
 import { CgSpinnerTwo } from "react-icons/cg";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import Markdown from 'marked-react';
+import Markdown from "marked-react";
 
 const APIResponseComponent = () => {
-    const [APIResponse, setResponse] = useState<string>("");
+    const [APIResponse, setResponse] = useState<any>("");
     const [commandVar, setCommand] = useState<string>("");
     const [categoryVar, setCategory] = useState<string>("");
 
@@ -19,8 +18,8 @@ const APIResponseComponent = () => {
             "command_name",
         );
 
-        setCategory(category);
-        setCommand(command_name);
+        setCategory(category || "");
+        setCommand(command_name || "");
 
         if (!category && !command_name) {
             fetch("/api/help/get")
@@ -31,9 +30,7 @@ const APIResponseComponent = () => {
         }
 
         if (category && !command_name) {
-            fetch(
-                `/api/help/get/${category}`,
-            )
+            fetch(`/api/help/get/${category}`)
                 .then((response) => response.json())
                 .then((data) => {
                     setResponse(data);
@@ -41,9 +38,7 @@ const APIResponseComponent = () => {
         }
 
         if (command_name) {
-            fetch(
-                `/api/help/get/${category}/${command_name}`,
-            )
+            fetch(`/api/help/get/${category}/${command_name}`)
                 .then((response) => response.json())
                 .then((data) => {
                     setResponse(data);
@@ -80,7 +75,7 @@ const APIResponseComponent = () => {
         url.searchParams.set("command_name", command);
         window.history.pushState({}, "", url);
         fetchData();
-    }
+    };
 
     const returnToTop = () => {
         setResponse("");
@@ -101,25 +96,25 @@ const APIResponseComponent = () => {
     if (!APIResponse) {
         return (
             <div className="relative">
-                <Heading size="6xl" className="text-center mt-10">
+                <h1 className="text-6xl font-bold text-center mt-10">
                     RT Help
-                </Heading>
-                <Card className="mt-5">
-                    <Flex direction="row" className="justify-center">
+                </h1>
+                <div className="mt-5 bg-white rounded-lg shadow p-4">
+                    <div className="flex flex-row justify-center">
                         <CgSpinnerTwo size={100} className="animate-spin" />
-                    </Flex>
-                </Card>
+                    </div>
+                </div>
             </div>
         );
     }
     if (!commandVar && !categoryVar) {
         return (
             <div className="relative">
-                <Heading size="6xl" className="text-center mt-10">
+                <h1 className="text-6xl font-bold text-center mt-10">
                     RT Help
-                </Heading>
-                <Card className="mt-10">
-                    <Flex direction="row" className="justify-center">
+                </h1>
+                <div className="mt-10 bg-white rounded-lg shadow p-4">
+                    <div className="flex flex-row justify-center">
                         {APIResponse?.data &&
                             Object.keys(APIResponse.data).map((key) => (
                                 <Button
@@ -130,34 +125,34 @@ const APIResponseComponent = () => {
                                     {APIResponse.data[key].ja}
                                 </Button>
                             ))}
-                    </Flex>
-                </Card>
+                    </div>
+                </div>
             </div>
         );
     }
     if (categoryVar && !commandVar) {
         return (
             <div className="relative">
-                <Heading size="6xl" className="text-center mt-10">
+                <h1 className="text-6xl font-bold text-center mt-10">
                     RT Help
-                </Heading>
-                <Card className="mt-10">
-                    <Center>
+                </h1>
+                <div className="mt-10 bg-white rounded-lg shadow p-4">
+                    <div className="flex items-center justify-center">
                         <Button
                             className="text-center bg-red-500 hover:bg-red-300 text-white mb-2"
                             onClick={() => returnToTop()}
                         >
                             <IoMdArrowRoundBack size={20} /> 戻る
                         </Button>
-                    </Center>
-                    <Flex direction="col" className="justify-center">
+                    </div>
+                    <div className="flex flex-col justify-center">
                         {APIResponse?.data &&
                             Object.keys(APIResponse.data).map((key) => (
-                                <Card className="mt-2 mb-2" key={key}>
-                                    <Flex
-                                        direction="row"
-                                        className="justify-left"
-                                    >
+                                <div
+                                    className="mt-2 mb-2 bg-white rounded-lg shadow p-4"
+                                    key={key}
+                                >
+                                    <div className="flex flex-row justify-left">
                                         <Button
                                             onClick={() =>
                                                 handleCommandClick(key)
@@ -166,25 +161,25 @@ const APIResponseComponent = () => {
                                         >
                                             /{key}
                                         </Button>
-                                        <Heading size="xl" className="mt-1">
+                                        <h2 className="text-xl font-bold mt-1">
                                             {APIResponse.data[key].ja}
-                                        </Heading>
-                                    </Flex>
-                                </Card>
+                                        </h2>
+                                    </div>
+                                </div>
                             ))}
-                    </Flex>
-                </Card>
+                    </div>
+                </div>
             </div>
         );
     }
     if (!categoryVar && commandVar) {
         return (
             <div className="relative">
-                <Heading size="6xl" className="text-center mt-10">
+                <h1 className="text-6xl font-bold text-center mt-10">
                     RT Help
-                </Heading>
-                <Card className="mt-10">
-                    <Flex direction="row" className="justify-center">
+                </h1>
+                <div className="mt-10 bg-white rounded-lg shadow p-4">
+                    <div className="flex flex-row justify-center">
                         {APIResponse?.data &&
                             Object.keys(APIResponse.data).map((key) => (
                                 <Button
@@ -195,28 +190,30 @@ const APIResponseComponent = () => {
                                     {APIResponse.data[key].ja}
                                 </Button>
                             ))}
-                    </Flex>
-                </Card>
+                    </div>
+                </div>
             </div>
         );
     }
     if (commandVar && categoryVar) {
         return (
             <div className="relative">
-                <Heading size="6xl" className="text-center mt-10">
+                <h1 className="text-6xl font-bold text-center mt-10">
                     RT Help
-                </Heading>
-                <Card className="mt-10">
-                    <Center>
+                </h1>
+                <div className="mt-10 bg-white rounded-lg shadow p-4">
+                    <div className="flex items-center justify-center">
                         <Button
                             className="text-center bg-red-500 hover:bg-red-300 text-white mb-2"
                             onClick={() => returnToCategory()}
                         >
                             <IoMdArrowRoundBack size={20} /> 戻る
                         </Button>
-                    </Center>
-                    <Markdown className="mt-5">{APIResponse.data.ja}</Markdown>
-                </Card>
+                    </div>
+                    <div className={"mt-5"}>
+                        <Markdown>{APIResponse.data.ja}</Markdown>
+                    </div>
+                </div>
             </div>
         );
     }
