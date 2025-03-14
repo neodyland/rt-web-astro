@@ -15,5 +15,8 @@
         "indentWidth": 4,
         "indentStyle": "space",
         "ignore": [".astro/", "dist/"]
+    },
+    "javascript": {
+        "formatter": { "bracketSpacing": true }
     }
 }
