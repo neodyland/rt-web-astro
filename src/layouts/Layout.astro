@@ -10,6 +10,8 @@ import { Footer } from "../components/nUI/Footer";
 
 import "@fontsource/noto-sans-jp";
 
+import "../styles/globals.css";
+
 const nav = [
     {
         name: "ホーム",
@@ -175,6 +177,6 @@ const buttons = [
 	<div class="mx-auto min-h-screen max-w-7xl px-4 py-24">
 		<slot/>
 	</div>
-	<Footer social={social} links={links} />
+	<Footer social={social} links={links} className="bg-black text-white"/>
 	</body>
 </html>

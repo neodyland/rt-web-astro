@@ -32,7 +32,7 @@ const useToggle = (initialValue: boolean = false): [boolean, () => void] => {
 };
 
 const headerVariants = tv({
-    base: "fixed inset-x-0 top-0 z-50 py-2 transition-[padding-top,padding-bottom,box-shadow] ease-in-out lg:py-0 text-white",
+    base: "fixed inset-x-0 top-0 z-50 py-2 transition-[padding-top,padding-bottom,box-shadow] ease-in-out lg:py-0 text-black",
     variants: {
         isScrolled: {
             true: "border-b border-outline bg-primary border-primary backdrop-blur lg:bg-opacity-70",
@@ -287,7 +287,7 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(
                                                 key={buttonProps.title}
                                             >
                                                 <button
-                                                    className="btn btn-primary text-white"
+                                                    className="btn btn-neutral text-white"
                                                     {...buttonProps}
                                                 >
                                                     {buttonProps.title}
@@ -295,7 +295,7 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(
                                             </a>
                                         ) : (
                                             <button
-                                                className="btn btn-primary text-white"
+                                                className="btn btn-neutral text-white"
                                                 {...buttonProps}
                                                 key={buttonProps.title}
                                             >
@@ -358,7 +358,7 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(
                                     key={buttonProps.title}
                                 >
                                     <button
-                                        className="btn btn-primary text-white"
+                                        className="btn btn-neutral text-white"
                                         {...buttonProps}
                                     >
                                         {buttonProps.title}
@@ -366,7 +366,7 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(
                                 </a>
                             ) : (
                                 <button
-                                    className="btn btn-primary text-white"
+                                    className="btn btn-neutral text-white"
                                     {...buttonProps}
                                     key={buttonProps.title}
                                 >
