@@ -35,7 +35,7 @@ const headerVariants = tv({
     base: "fixed inset-x-0 top-0 z-50 py-2 transition-[padding-top,padding-bottom,box-shadow] ease-in-out lg:py-0 text-black",
     variants: {
         isScrolled: {
-            true: "border-b border-outline bg-primary border-primary backdrop-blur lg:bg-opacity-70",
+            true: "border-b border-outline bg-white border-white backdrop-blur lg:bg-opacity-90 shadow-lg",
             false: "bg-transparent lg:py-4",
         },
     },
