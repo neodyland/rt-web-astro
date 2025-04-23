@@ -250,7 +250,7 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(
                         variants={mobileMenuContainerVariants}
                     >
                         <motion.ul
-                            className="flex h-full w-full flex-col border-t border-outline bg-primary px-6 py-4"
+                            className="flex h-full w-full flex-col border-t border-outline bg-white px-6 py-4"
                             variants={mobileMenuItemContainerVariants}
                         >
                             {navigation.map((item, index) => {

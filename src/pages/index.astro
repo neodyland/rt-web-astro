@@ -4,16 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import { FaTools, FaShieldAlt, FaRegSmileWink } from "react-icons/fa";
 import { FaWandMagicSparkles, FaMusic } from "react-icons/fa6";
 import { HiMiniSpeakerWave } from "react-icons/hi2";
-import { TypewriterEffectSmooth } from "../components/react/type-effect";
-
 import RTIcon from "../images/RTLogo.png";
-
-const Line1 = [
-    {
-        text: "他にはないような機能を。",
-        className: "text-black-20",
-    },
-];
 ---
 
 <Layout title="RT Discord Bot">
@@ -37,7 +28,7 @@ const Line1 = [
 			</h1>
 			<div class="flex flex-col lg:flex-row">
 				<div class="mt-20 lg:mt-24 lg:w-1/2 lg:pl-16">
-					<TypewriterEffectSmooth words={Line1} client:load/>
+					<h1 class="text-4xl font-bold mb-3">他にはないような機能を。</h1>
 					<p class="tracking-wider text-night/50 text-lg">
 						便利な機能たくさん備えた高性能bot
 					</p>
@@ -50,7 +41,7 @@ const Line1 = [
 			</div>
 		</div>
 		<div class="mt-20 lg:mt-32">
-			<div class="flex w-full flex-col lg:flex-row my-3">
+			<div class="flex w-full flex-col space-y-10 lg:space-y-0 lg:flex-row my-3">
 				<div class="flex flex-col lg:w-1/2 mx-20 space-y-2">
 					<div class="flex flex-row space-x-5 justify-center items-center">
 						<FaTools fontSize={30} />
@@ -72,7 +63,7 @@ const Line1 = [
 					</p>
 				</div>
 			</div>
-			<div class="flex w-full flex-col lg:flex-row my-3">
+			<div class="flex w-full flex-col space-y-10 lg:space-y-0 lg:flex-row my-3">
 				<div class="flex flex-col lg:w-1/2 mx-20 space-y-2">
 					<div class="flex flex-row space-x-5 justify-center items-center">
 						<FaShieldAlt
@@ -94,7 +85,7 @@ const Line1 = [
 					</p>
 				</div>
 			</div>
-			<div class="flex w-full flex-col lg:flex-row my-3">
+			<div class="flex w-full flex-col space-y-10 lg:space-y-0 lg:flex-row my-3">
 				<div class="flex flex-col lg:w-1/2 mx-20 space-y-2">
 					<div class="flex flex-row space-x-5 justify-center items-center">
 						<HiMiniSpeakerWave

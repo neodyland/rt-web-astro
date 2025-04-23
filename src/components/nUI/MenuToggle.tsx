@@ -5,7 +5,7 @@ const Path: React.FC<SVGMotionProps<SVGPathElement>> = (props) => (
     <motion.path
         fill="transparent"
         strokeWidth="2"
-        stroke="#FFFFFF"
+        stroke="#000000"
         strokeLinecap="round"
         {...props}
     />

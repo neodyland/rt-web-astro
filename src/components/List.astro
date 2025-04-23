@@ -1,0 +1,35 @@
+---
+interface Props {
+    title: string;
+    content?: string[];
+    licenses?: string;
+}
+
+const { title, content, licenses } = Astro.props;
+---
+<main>
+    <h3 class="text-2xl mt-2 font-bold">{title}</h3>
+    <div class="mt-2 divider divider-neutral" />
+    <div class="flex flex-col">
+        <div class="flex flex-col">
+            {content ? (
+                <div class="flex flex-col space-y-2">
+                    {content.map((name) => (
+                        <span class="text-md font-bold">・ {name}</span>
+                    ))}
+                </div>
+                    <p class="text-lg mt-5">
+                        <a href={licenses}>
+                            <span class="text-md">ライセンス</span>
+                        </a>
+                    </p>
+            ) : (
+                    <p class="text-lg">
+                        <a href={licenses}>
+                            <span class="text-md">ライセンス</span>
+                        </a>
+                    </p>
+            )}
+        </div>
+    </div>
+</main>

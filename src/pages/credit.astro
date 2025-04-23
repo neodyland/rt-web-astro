@@ -1,0 +1,176 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProfileCard from "../components/ProfileCard.astro";
+import List from "../components/List.astro";
+
+import RTIcon from "../images/RTLogo.png";
+import NeodyLogo from "../images/NeodyLogo.png";
+---
+<Layout title="RT Credits">
+    <div class="flex flex-col">
+        <div class="flex justify-center items-center">
+            <h1 class="text-4xl font-bold text-center mt-10">
+                クレジット
+            </h1>
+        </div>
+        <h2 class="text-4xl font-bold mt-10">RT Developers</h2>
+        <h3 class="text-2xl mt-2">RTの開発をしている人達です。</h3>
+        <div class="mt-2 divider divider-neutral"/>
+        <div class="flex flex-col space-y-5 mt-5">
+            <ProfileCard name="yaakiyu" description="tasurenからbotの管理を引き継ぎました。おもにバックエンド担当です。" image="https://discord-avatar.maamokun.workers.dev/693025129806037003" skills={["バックエンド開発", "サーバー運用"]} />
+            <ProfileCard name="Takkun" description="この先代のサイトを作りました。RTのプログラムも作ってます！主にフロントエンドを開発しています。" image="https://discord-avatar.maamokun.workers.dev/667319675176091659" skills={["バックエンド開発", "フロントエンド開発", "デザイナー"]} />
+            <ProfileCard name="tasuren" description="RTの開発をし始めた張本人。（現在退職）" image="https://discord-avatar.maamokun.workers.dev/634763612535390209" skills={["創業者"]} />
+            <ProfileCard name="neody" description="サーバー運用・開発を支援してます。" image={NeodyLogo.src} skills={["運営支援"]} href="https://neody.land" />
+            <ProfileCard name="Icon" description="Author: Takkun License: CC BY-ND 4.0" image={RTIcon.src} skills={[]} />
+        </div>
+        <h2 class="text-4xl font-bold mt-10">謝辞</h2>
+        <h3 class="text-2xl mt-2">RTで使用されているもの達です。どうもありがとう！</h3>
+        <div class="mt-2 divider divider-neutral"/>
+        <h2 class="text-4xl font-bold mb-5">Libraries</h2>
+        <List
+                content={[
+                    "PyMySQL",
+                    "sanic-cors",
+                    "aiofiles",
+                    "aiohttp",
+                    "aiomysql",
+                    "async-stripe",
+                    "async-timeout",
+                    "attrs",
+                    "certifi",
+                    "charset-normalizer",
+                    "discord.py",
+                    "httptools",
+                    "idna",
+                    "import-expression",
+                    "ipcs",
+                    "multidict",
+                    "orjson",
+                    "requests",
+                    "sanic",
+                    "sanic-routing",
+                    "stripe",
+                    "tempylate",
+                    "toml",
+                    "tornado",
+                    "ujson",
+                    "urllib3",
+                    "uvloop",
+                    "websockets",
+                    "yarl"
+                ]}
+                title="Backend - Web and Database"
+                licenses="/licenses/backend-web.txt"
+        />
+        <List
+                content={[
+                    "Pillow",
+                    "PyMySQL",
+                    "pynacl",
+                    "libsodium",
+                    "aiodns",
+                    "aiofiles",
+                    "aiohttp",
+                    "aiomysql",
+                    "aiosignal",
+                    "astunparse",
+                    "async-timeout",
+                    "attrs",
+                    "beautifulsoup4",
+                    "braceexpand",
+                    "captcha",
+                    "certifi",
+                    "cffi",
+                    "cchardet",
+                    "uchardet",
+                    "charset-normalizer",
+                    "click",
+                    "cryptography",
+                    "deep-translator",
+                    "discord-ext-fslash",
+                    "discord.py",
+                    "dpyecm",
+                    "emoji",
+                    "frozenlist",
+                    "gTTS",
+                    "idna",
+                    "import-expression",
+                    "ipcs",
+                    "jishaku",
+                    "line-profiler",
+                    "lxml",
+                    "multidict",
+                    "niconico.py",
+                    "orjson",
+                    "psutil",
+                    "pycares",
+                    "pycparser",
+                    "pydub",
+                    "reprypt",
+                    "requests",
+                    "six",
+                    "soupsieve",
+                    "toml",
+                    "urllib3",
+                    "uvloop",
+                    "websockets",
+                    "yarl",
+                    "youtube_dl",
+                    "pyopenjtalk",
+                    "hts_engine API",
+                    "Open JTalk"
+                ]}
+                title="Backend - Bot"
+                licenses="/licenses/backend-bot.txt"
+        />
+        <List
+                content={[
+                    "Astro",
+                    "Tailwind CSS",
+                    "daisyui",
+                    "React",
+                ]}
+                title="Frontend"
+                licenses="/licenses/frontend.txt"
+        />
+        <h2 class="text-4xl font-bold my-5">TTS voices</h2>
+        <List
+                content={[
+                    "メイ",
+                    "男の人 (nitech_jp_atr503_m001)",
+                ]}
+                title="OpenJTalk"
+                licenses="/licenses/openjtalk.txt"
+        />
+        <List
+                content={[
+                    "四国めたん (あまあま)",
+                    "ずんだもん (あまあま)",
+                    "四国めたん (ノーマル)",
+                    "ずんだもん (ノーマル)",
+                    "四国めたん (セクシー)",
+                    "ずんだもん (セクシー)",
+                    "四国めたん (ツンツン)",
+                    "ずんだもん (ツンツン)",
+                    "春日部つむぎ",
+                    "波音リツ",
+                    "雨晴はう",
+                    "玄野武宏",
+                    "白上虎太郎",
+                    "冥鳴ひまり",
+                    "九州そら (あまあま)",
+                    "九州そら (ノーマル)",
+                    "九州そら (セクシー)",
+                    "九州そら (ツンツン)",
+                    "九州そら (ささやき)",
+                    "剣崎雌雄"
+                ]}
+                title="VOICEVOX"
+                licenses="/licenses/voicevox.txt"
+        />
+        <List
+                title="gTTS"
+                licenses="https://github.com/pndurette/gTTS/blob/main/LICENSE"
+        />
+    </div>
+</Layout>
